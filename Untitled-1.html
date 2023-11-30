@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Web Surfer</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #ff0066;
+            text-align: center;
+        }
+
+        #urlInput {
+            width: 70%;
+            padding: 8px;
+            border: 2px solid #ff0066;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        #goButton {
+            padding: 8px;
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #resultFrame {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #ff0066;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        #funnyMessage {
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funny Web Surfer</h1>
+
+    <form id="urlForm">
+        <input type="text" id="urlInput" placeholder="Enter URL">
+        <button type="button" id="goButton" onclick="loadPage()">Go</button>
+    </form>
+
+    <iframe id="resultFrame" sandbox="allow-scripts"></iframe>
+
+    <p id="funnyMessage">Why did the web surfer go to therapy? To address his cookies issues!</p>
+
+    <script>
+        function loadPage() {
+            var urlInput = document.getElementById('urlInput');
+            var resultFrame = document.getElementById('resultFrame');
+
+            // Use the sandbox attribute to prevent scripts from the loaded page
+            resultFrame.src = urlInput.value;
+        }
+    </script>
+</body>
+</html>
